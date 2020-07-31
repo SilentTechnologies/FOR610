@@ -1,0 +1,48 @@
+From the SANS website the following topics are included on the GREM exam
+
+1) Windows assembly concepts for reverse engineering — What you do in IDA Pro, why you need assembly and C knowledge
+2) Common characteristics of Windows Malware — API functions, threads, structures
+3) In-depth analysis of malicious and protected executables — What you do in IDA Pro after some practice
+4) Malicious document analysis — Attackers put scripts in files
+5) Malicious web browser script analysis —Attackers put scripts on the internet, command and control traffic flows over the wire
+6) Memory forensics — Volatility
+
+For this course i noted that some pre-requisite knowledge is needed otherwise youre going to have a bad time.
+
+1) Some understanding of x86 assembly/shellcode. This can basically be distilled down to how a computer used arithmetic to do stuff. Walking into this course the only real requirement here is to know:
+  a) x86 (and x64) registers,
+  b) variable types (word, dword, char, etc.),
+  c) stack basics, and
+  d) flow instructions.
+
+#https://www.tutorialspoint.com/assembly_programming/index.htm
+
+2) At least a working knowledge of C - if not how to program specifically in C, then something close enough like Java. Focus on knowing how to use:
+  a) pointers,
+  b) memory allocation,
+  c) the heap
+  d) the concept of libraries etc.
+
+#https://www.tutorialspoint.com/cprogramming/index.htm
+#https://azeria-labs.com/heap-exploitation-part-1-understanding-the-glibc-heap-implementation/
+
+Resources to make your life easier.
+1) Book recommendations
+  a) Practical Malware analysis,
+  b) The Malware Analyst's Cookbook,
+  c) The Art of Memory Forensics,
+  d) Windows Internals 6 or 7, and
+  e) The IDA Pro Book.
+2) SANS FOR610 workbooks (day 1 through 5, + the workbook)
+3) Malicious File Analysis Cheatsheet or anything by Lenny Zeltser (instructor)
+  #https://zeltser.com/cheat-sheets/
+  #https://zeltser.com/reverse-engineering-malicious-code-tips/
+
+Index:
+This is perhaps the single most important thing for the exam itself. A spreadsheet for me works the best, in this way you can cross reference the syllabus books, to break things into topics, with page numbers and some quick reference notes. You can use this to highlight:
+a) Windows API functions of importance,
+b) Structures,
+c) Plugins,
+d) specific code/commands.
+
+You can then go through and tab you books and colour code your index so it is easy to find in the exam.
