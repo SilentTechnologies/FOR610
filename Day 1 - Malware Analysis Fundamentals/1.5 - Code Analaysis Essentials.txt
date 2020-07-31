@@ -1,0 +1,49 @@
+Code Analysis
+
+x64dbg
+IDA - static disassembler
+	+ windbg
+	+ binary ninja etc
+
+Disassembling - translating binary machine-level to human-readable
+
+Static code-level analysis - disassemble to examine code without execution
+
+Dynamic analysis - examine code whilst running
+
+using x64db
+	options/settings
+		break on: shows where the debugger will set breakpoints
+	g-key for graph tab/to populate the graph tab
+	decompiler - tries to recreat sudo-code
+	you can single-step - one instruction
+	Set breakpoints
+		for creation/reading of files
+		looking at PeStudio for API calls and set breakpoint
+			SetBPX ReadFile <set break point on execution>
+		google the API (readfile)
+			looks for which parameters the API is expecting
+		check handles tab
+			may need to refresh (f5, click refresh)	
+Process Hacker
+	check properties of program you're running - will have a handles tab
+	
+check if reading a file
+	can check API
+		run to user code - see if a new API is called - step through as needed
+	cryptdecrypt for example
+		run for line after call
+		again google the API for input/output requirements
+
+		 #NB return value x64 = RAX, x84 = eax
+
+Another way of decoding.conf
+API Monitor
+	Can check API category to spy on
+
+Encoded data
+	XOR using 1-byte keys
+
+	xxd -r -p encoded.hex > encoded.raw
+	translate.py encoded.raw decoded.txt 'byte ^ 0x5b'
+

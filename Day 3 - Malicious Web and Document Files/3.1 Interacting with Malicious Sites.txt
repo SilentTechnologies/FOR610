@@ -1,0 +1,23 @@
+ensure a dedicated connection only for research
+OpenVPN is a popular option
+AlgoVPN
+
+wget or curl
+download specific files as needed
+specialised tools - pinpoint or scout
+honeyclient software - thus
+
+Fiddler - local proxy tool
+
+Example
+	Fiddler
+		can check the different views for each request - and response
+			can view in notepad++ for ease of viewing
+		check for code that doesn't belong
+
+captipper
+	./CapTipper.py -g -d /tmp/out ~/session.pcap
+networkminer
+	
+
+WMIC - 

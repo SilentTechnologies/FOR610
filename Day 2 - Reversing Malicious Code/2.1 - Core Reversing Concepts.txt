@@ -1,0 +1,84 @@
+source code
+	-> compiler
+		-> object code
+			-> linker	<- libraries
+				-> executable file
+					-> OS loader	<- libraries
+						-> push ebx 	<- libraries
+						   move ebx, esp
+						   int 3
+
+
+imports table = linking libraries/dependancies
+
+IDA
+	FLIRT - common software library will auto-rename functions
+
+Process
+	import address table
+		search for eye catching API - eg. reg
+			look up microsoft docco - msdn.miscrosoft.com 
+			react.os website 
+		double click
+		look for the API-call - click on it, right click, jump to xref to operand (shortcut x)
+
+
+
+assembly
+hex left side = relative offsets
+General Registers
+	- EAX - (accumulator) addition, multiplication, return values
+	- ECX - counter
+	-EBP - (baseline)reference arguments and local variables
+	- ESP - (stack pointer)points to last item on stack
+	- ESI/EDI - memory transfer instructions
+Specific Registers
+	- EIP - next instruction to execute
+	- EFLAGS - outcomes of computations
+	- Segment registers
+		- Code segment (CS)
+		- Data segment (DS)
+		- Stack segment (SS)
+64 bits - qword
+	-RAX, RCX
+32 bits - dword
+	- EAX, ECX
+16 bits - word
+	- AX, CX
+8 bits
+	- AH, AL, CH, CL
+instructions 
+	- call
+	- push - used to pass parameters - places value on top of stack
+	- mov - copy from one memory location to another - destination is first - square brackets = a pointer
+
+data manipulation: ADD, SUB, SHR, AND, OR, XOR
+data tranfer: PUSH/POP, MOV, XCHG,LEA
+Branching/conditionals: JMP, CALL, RET, CMP
+
+jump instructions
+JZ = jump if zero
+JNZ = jump if not zero
+JA = jump if above
+JNGE = jump if not greater than or equal
+
+TEST - check if register is zero
+CMP - compare two registers
+
+Windows has call - RaiseException
+XOR location with itself - contents will be zero
+API's for HTTP
+	InternetWriteFile
+	InternetSetOption
+	InternetReadFile
+	InternetQueryOption
+	InternetOpen
+	InternetCrackUrl
+	InternetConnect
+	InternetCloseHandle
+	HttpSendRequestEX
+	HttpSendRequest
+	HttpQueryInfo
+	HttpOpenRequest
+
+highlight function - press "N" to name in IDA

@@ -1,0 +1,28 @@
+Allow the script to deobfuscate itself, such as on run
+
+Process
+	
+beautifying = make it easier to read - notepad++ has ability to make certain codes easier to read
+notepad++ - plugins
+	jsmin - removes superfluous comments etc.
+	jsformat - beautify
+
+revert script
+Set breakpoint after the deobfusation script
+		add "debugger;" in a logical spot
+	open webpage
+	f12 for developer tools
+	debugger tab
+	reload
+	allow blocked content
+insert breakpoints as you need
+console tab
+	console.group(<var_name>)
+	copy it and paste is in notepad or something
+	beautify as needed
+
+know how to at least read some javascript, python, html, and c
+
+arguments.callee - call itself as a variable
+
+internet explorer provides the ability to set breakpoints throughout the code - unlike firefox and chrome

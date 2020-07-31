@@ -1,0 +1,27 @@
+olevba.py <document> > file.txt
+open with text editor
+
+functions
+	AutoOpen() - will be executed automatically in word
+	Workbook_Open() - will be executed automatically in excell
+
+legacy office - OLE2 - object linking and embedding (structured storage)
+newer version - OOXML - open office xml
+
+4 letter extensions = ooxml
+
+the macros will be stored in a binary file/ole2 .bin file
+
+strings <file> | more
+strings --encoding=l <file> | more
+olednump.py <file>
+	show structure of file
+	ole2 structure = stream(files) and storage(dir) - macro will be listed with capital M 
+oledump.py <file> -s (#) -v | more
+
+xor-kpa.py -x '<string1>' '<string2>'
+stores VBA's in 2 forms:
+	Source code - 
+	p-code - highly specific to version
+
+pcodedmp.py -d <file>

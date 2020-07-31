@@ -1,0 +1,36 @@
+Functions perform specific stasks
+usually have:
+	input - values passed in
+	body - code for performing task
+	return - value passed back
+
+the stack
+	Last in, First out
+	PUSH adds, POP removes
+	ESP - points to next item on stack
+	EBP - unchanging reference
+	EBP - value = local variable
+	EBP + value = parameter
+
+Stack grows towards smaller memory address - shrinks to larger memory address
+
+return = function(arg0, arg1, arg2)
+
+PUSH arg2, PUSH arg1, PUSH arg0
+
+PUSH EBP - automatic assigned address function jumps once it is finished
+
+SFP - save frame pointer or (EBP - baselines pointer)
+
+32bit each element on stack is 4 bytes
+
+cdecl - (c declaration) arguments placed onto stack, return value placed in EAX, caller cleans up the stack
+stdcall - microsoft API's, job of function to lean up stack
+
+fastcall - arguments stored in registers, extra arguments are placed on stack, callee cleans up arguments
+thiscall - used in C++ - 
+
+LEA - load effective address - performs computation for the address location and stores the location
+
+LEAVE - short hand for restore EBP ESP
+

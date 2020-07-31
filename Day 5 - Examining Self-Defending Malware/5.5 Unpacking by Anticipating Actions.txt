@@ -1,0 +1,22 @@
+Anticipate the following:
+Stack cleanup and reuse
+WriteProcessMemory
+RtlDecompressBuffer content decoding
+VirtualAlloc in shellcode
+
+LoadLibrary - Compensating for the packed IAT or just sneaky runtime DLL loading
+CreateProcess - Unpacking code into othe processes beyond process hollowing
+
+VirtualProtect - API for changing memory permissions
+
+pe_unmapper (nix)
+	pe_unmapper <extractedfile>.exe <memoryaddress from pulled> <output>.exe
+
+Can anticipate and anticipate action evaluation
+
+eg
+mov ebx,dword ptr ds:[eax]
+cmp byte ptr ds:[ebx],CC
+je <endprogram>
+
+CC is equal to int3 - or software breakpoint

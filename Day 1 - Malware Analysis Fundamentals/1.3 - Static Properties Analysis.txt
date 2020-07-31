@@ -1,0 +1,22 @@
+start with low cost/low time
+	File and section hashes
+	Packer identification
+	Embedded resources
+	Imports and exports
+	Crypto references
+	Digital certificates
+	Strings
+
+Common First step
+Strings
+	strings -a
+	strings -a --encoding=l
+
+PeStudio (win)
+	metadata + strings analysis
+	Check the libraries
+
+peframe (nix)
+Detect It Easy(DIE)
+Exeinfo PE (win) - PE header details
+
