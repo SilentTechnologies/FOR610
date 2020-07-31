@@ -1,0 +1,63 @@
+Windows based tools
+Process hacker
+	Replaces built-in Task Manager
+Process Monitor
+	Records interactions of process with registry, file system, etc
+Regshot
+	Highlights changes to file system and registry
+ProcDOT
+	Visualises Process Monitor logs
+Wireshark
+	Network sniffer/packet capture
+
+Steps
+	Launch Process Hacker
+		determine "normal processes + network behavior"
+		When a user starts a program - NORMALLY it is a child of explorer.exe
+		integrity levels = privs
+		low integrity levels means low priv and harder to escalate
+	Launch Process Monitor
+		Pause capture and clear "NORMAL" capture
+	Launch RegShot
+		Take a snapshot of the "NORMAL" system
+		(Take another snapshot after infection to compare)
+	Launch Wireshark
+	Activate Monitoring in Process Monitor
+	Run Malware
+		Wait for malware to do its thing
+		Kill malware
+	Pause Process Monitor
+	Pause Wireshark
+	Take second snapshot in RegShot
+
+	RegShot Report
+		Check run registry keys will show persistance mechanism
+		Check registry keys, if hex try to convert to ascii
+		Check for added files
+			Prefetch file - allow windows to run file faster next time
+		Check crypto/RSA directory
+			Learn more on windows API's
+
+	Process Monitor Report
+		Can use/save filters
+			Use to filter normal activity
+		View/Process Tree
+			visual summary of all events
+		Can save and open in excell then use to filter
+		Check events
+			Creation of files - confirm with RegShot
+
+	ProcDOT	
+		Save as .cvs
+		Open file in CERT.at
+			Procmon = logfile
+			Launcher - Select relevant process
+			Refresh
+			Can use this as a move/step by step analysis of sequence of events
+
+	Wireshark
+		Check for attempted connections
+		follow tcp stream
+
+can use fakedns(nix) - for autoresolve
+can use httpd(nix) - for webserver
