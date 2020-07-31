@@ -1,0 +1,68 @@
+Rich Text File(RTF)
+
+Doesn't support macros - but can embed files using OLE1 objects
+
+Control word starts with \
+
+group encloses elements {} specifies text for groups and formatting
+
+Groups can be nested and include other groups
+
+Objects are embedded using \object control word
+
+usually a serialised string of hex values
+
+eg:
+{\rtf1...{\object... {\*\objdata 010500000200861635b5..}} ..}
+
+rtfdump.py <file> > output.txt
+wc -l <output.txt>
+
+rtfdump.py <file> -f O (object)
+general rule is look at deepest nested object with highest # hex values
+rtfdump.py <file> -s <select object number>
+rtfdump.py <file> -s # -H <hex> > output.txt
+
+rtfdump.py <file> -s # -H -c(cut) 0x<hexstart>:<hexstart> -d(dump) > output.bin
+
+use scdbg
+	select option - FindSc (find shellcode)
+
+shellcode2exe.py <output.bin>
+use x32dbg for code level analysis on the shellcode
+
+rtfobj.py <file>
+		
+group level 0 - content added after the file outside/overlay
+
+XORSearch - spot shellcode patterns
+xorsearch -W -d 3 <file>
+
+indirectly reading the EIP
+	CALL <address> #call specific function so EIP is at the top of the stack
+	POP EAX - place object at top of stack(EIP) in EAX where it can be read
+	Pattern called "get EIP" - CALL then POP
+
+Access windows API's
+	needs to load libraries before execution
+	looking for the Process Environment Block (PEB)
+		just needs to locate kernel32.dll in memory
+	Address of PEB is always stored in FS(Fsegnment)+ 30bytes / FS:[30h]
+
+xorsearch -W -d 3 <file>.bin can show you the shellcode offset
+
+scDbg can specify Start Offset - can give additional files -if the program asks for it
+
+jump2it <file> <offset> addhandle <file>
+
+
+Overall Process:
+	Examine file statically for anomalies
+		Embedded, shellcode, JavaScript, macros etc.
+		Malformed Fields or unexpected characters
+		Items in unusual locations
+	Extract embedded code 
+		Decode/deobfuscate the code
+		Understand nature of payload and infection steps
+	Perform Behavioural analysis with vulnerable app and monitoring tools
+	Victim triggered/exploit/or automation

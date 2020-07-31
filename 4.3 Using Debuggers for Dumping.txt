@@ -1,0 +1,23 @@
+Using debugger for more controlled approach
+	disable dynamic base (ASLR)
+	load the packed specimen in debugger
+	locate the end of the unpacker - set breakpoint
+		can be time consuming and challenging
+	run specimen so it unpacks original program and pause
+	single-step to let process jump to unpacked code (OEP - Original Entry Point)
+	Dump unpacked process
+	fix the PE header - pay attention to IAT and EP
+
+if the program is unpacked - should be able to search for current region/string reference - should be lots of strings now
+
+x64dbg - plugin called ollydumpex
+	used to dump 
+		make sure the Virtual Offset is correct
+		Get EIP as OEP
+	wont fix the import table
+	might need to edit section and set characteristics flag as writable memory
+
+	-plugin for scylla
+		make sure OEP is correct
+		get import
+		dump

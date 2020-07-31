@@ -1,0 +1,25 @@
+kernel mode executable - needs to be 64bit for 64bit
+most malware is 32bit
+
+two types of 64bit malware
+	Browser Helper Object - for 64bit internet explorer
+	Device Drivers (rootkits) for win64
+
+additional registers
+	EAX - RAX
+	EBX - RBX
+	ECX - RCX
+
+general purpose registers - R8 - R15
+calling convention - fastcall (parameters via register)
+#NB first 4 parameters - RCX, RDX, R8, R9
+new address mode RIP + displacement
+
+R9 - R9D(doubleword) - R9W(word) - R9B(byte)
+
+steps
+	check imported functions/referenced strings/small functions
+	learn more about the function
+	check documentation for the expected call
+	take advantage of previous analysis
+	

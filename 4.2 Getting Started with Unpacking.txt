@@ -1,0 +1,30 @@
+Before trying to unpack the specimen 
+	DISABLE ASLR (Address Space Layout Randomisation)
+
+ImageBase field - address executable want to be loaded into memory
+
+ASLR means windows ignores the ImageBase
+
+can disable ASLR for given executable
+	find DllCharacteristics field in PE header
+	diable DynamicBase flag
+
+CFF Explorer
+	to edit PE header specify not compatible with ASLR
+	use to edit optional header - dll can move
+
+setdllcharacteristics -d
+
+used for dumpting programs from memory
+	Scylla
+		pick process to attach
+		dump
+			PE headers will likely still be pointed to the unpacker, and the import table will be missing
+		IAT Autosearch
+		Get Imports
+		Fix dump
+			point to dumpfile
+		can now load into IDA
+	Universal import Fixer
+	Imports Fixer
+

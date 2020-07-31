@@ -1,0 +1,52 @@
+Some keywords used by PDF:
+	Execute embedded JavaScript: /JS, /JavaScript, /XFA
+	Run embedded flash: /RichMedia
+	Launch external: /Launch, /EmbeddedFiles
+	Interact with websites: /URI, /SubmitForm
+
+PDF file is collection of elements:
+header
+object1 - 
+object2 etc
+xref - table with offsets of objects
+trailer - list # of objects and offset of xref
+
+streams are encoded - and usually hold the most risky portion of code
+
+base64dump.py <file>.pdf
+base64dump.py <file>.pdf -s 2(secondembedfile) -S(decodebase64)
+
+pdfid.py <file>.pdf
+	summarise risky aspects of PDF
+	pdfid.py <file>.pdf --extra
+	pdf-parser.py <file>.pdf --search <tag> | more
+	pdf-parser.py <file>.pdf --object <obj#>
+	pdf-parser.py <file>.pdf --object <obj#> --filter --raw -d <text.txt>
+
+heapspraying - place the shellcode in numerous places to ensure execution
+
+peepdf.py -fli <file>.pdf (i=interactiveshell)
+
+spidermonkey analsysis
+js -f /objects.js -f <file>.txt
+	check for syntax problems etc.
+
+app.setTimeOut - tricks tools by indirectly launching the function
+app.viewerVersion - identifies version of PDF being used
+syncAnnotScan and getAnnots - retrieve annotations embedded in docs - to assemble at runtime - similar to getElementById in web browsers
+
+base64dump.py -e pu(Percent Unicode) <file>
+base64dump.py -e pu <file> -s <idnumber> -d > <file2>.bin
+
+scdbg (windows)
+	good for bin snippet analysis
+	remember nohup instruction \u9090
+
+base64dump.py -e bu(Backslash Unicode) -s # -a (hexviewer)
+
+shellcode2exe.py <file>.bin
+
+pdfs can be password protected - to look at streams it needs to be decrypted
+
+Origami PDF framework - another tool 
+

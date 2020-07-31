@@ -1,0 +1,38 @@
+xmind - mind mapping tool
+Malware data repositories - VirusTotal
+Multi-engine antivirus scanner - VirusTotal, Metadefender, VirSCAN, AVCaesar
+File reputation - Malware Hash Registry, HashSets
+Automated sandboxes - Malwr, Hybrid Analysis
+Website investigation - urlQuery, vURL, Quttera
+Other threat intelligence - PassiveTotal, Censys, Open Threat Exchange 
+
+Static propertes analysis
+	PeStudio - win based
+	strings - usually build in on *nix (strings -a --encoding=l)
+	CFF Explorer
+	peframe
+	Detect It Easy
+	HxD
+	BinText (windows based version of strings)
+	signsrch - locates code used for crypto, compression etc.
+	pescan and portex - examine key aspects of win.exe and id some anomalies
+	MASTIFF - extracts details from various malware
+	exiftool - metadata embedded in files
+	trid - identify type of file
+	viper - manages malware collection and extraction of static properties about files
+Behavioral analysis
+	Process Hacker
+	Process Monitor
+	RegShot
+	Wireshark
+	fakedns
+	TcpLogView
+Code analysis
+	IDA
+	x64dbg/x32dbg
+	OllyDumpEx
+	jmp2it
+	Scylla
+
+Minerva Labs
+	Mystic - create mutexobj needed by some malware to act as a vaccine
